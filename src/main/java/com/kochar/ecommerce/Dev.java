@@ -1,13 +1,15 @@
 package com.kochar.ecommerce;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Dev {
 
     @Autowired // Field injection
-    private Laptop laptop;
+    @Qualifier("laptop")
+    private Computer computer;
 
     // Constructor injection
 //    public Dev(Laptop laptop) {
@@ -22,7 +24,7 @@ public class Dev {
 
     public void build() {
 
-        laptop.compile();
+        computer.compile();
         System.out.println("Begin project");
     }
 }
